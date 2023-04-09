@@ -53,15 +53,17 @@
 
       <q-img
         class="absolute-top"
-        src="https://cdn.quasar.dev/img/material.png"
+        src="https://www3.nhk.or.jp/nhkworld/en/news/backstories/2331/images/geM9EJcCyAImlHFIjsH5cmlkkOq8cFDeAWl77CWu.jpeg"
         style="height: 192px"
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+            <img
+              src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80"
+            />
           </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
+          <div class="text-weight-bold">Jungwoo Son</div>
+          <div>@sonjungwoo9</div>
         </div>
       </q-img>
     </q-drawer>
@@ -115,5 +117,8 @@ export default defineComponent({
   z-index: -1;
   opacity: 0.4;
   filter: grayscale(100%);
+}
+.q-img__image {
+  opacity: 0.7;
 }
 </style>
