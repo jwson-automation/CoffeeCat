@@ -1,41 +1,8 @@
-# Quasar Todo (quasar-todo)
+# Quasar Todo App
 
-A Quasar Project
+## Stack
+<img src="https://img.shields.io/badge/quasar-1976D2?style=for-the-badge&logo=quasar&logoColor=white"> 
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+## Capture
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+![Quasar-Todo-Chrome-2023-04-09-16-10-07](https://user-images.githubusercontent.com/108061510/230759825-699f1a82-dade-4dd9-9f0e-b87156a1e05c.gif)
