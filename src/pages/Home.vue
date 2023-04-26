@@ -11,7 +11,9 @@
         입니다.
       </p>
       <p>
-        <a href="/form" style="font-weight: bold">FORM</a>
+        <a href="https://forms.gle/7pXhQeigTGfWFsjQ7" style="font-weight: bold"
+          >FORM</a
+        >
         버튼을 누르시고, 이야기 하고 싶은 내용, 상담 받고 싶은 내용을 적어서
         보내주시면,
       </p>

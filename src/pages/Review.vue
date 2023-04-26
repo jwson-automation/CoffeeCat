@@ -93,7 +93,15 @@ export default defineComponent({
       newTask.value = "";
     };
     const tasks = reactive([
-      { title: "감상문 기능은 추가중입니다.", done: false },
+      {
+        title: "감상문 기능은 현재 개발중입니다.",
+        done: false,
+      },
+      {
+        title:
+          "멘토에게 텍스트로 전달해주거나, 노션 링크를 받아서 기록해주세요!",
+        done: false,
+      },
     ]);
 
     const deleteTask = (index) => {
