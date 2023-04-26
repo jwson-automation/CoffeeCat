@@ -1,73 +1,40 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header>
-      <q-toolbar>
+      <q-toolbar class="q-pt-lg q-pb-lg q-px-md">
+        <q-space />
+        <q-img src="../assets/logo.png" alt="Logo" width="300px" fit="cover" />
+        <q-space />
         <q-btn
+          to="/"
+          label="Home"
           flat
-          dense
           round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
+          dense
+          class="text-center q-mr-md"
         />
+        <q-space />
+        <q-btn
+          to="/"
+          label="Form"
+          flat
+          round
+          dense
+          class="text-center q-mr-md"
+        />
+
+        <q-space />
+        <q-btn to="/help" label="Review" flat round dense class="text-center" />
+        <q-space />
       </q-toolbar>
-      <div class="q-px-lg q-pt-xl q-mb-md">
-        <div class="text-h3">Todo</div>
-        <div class="text-subtitle1">{{ currentTime }}</div>
-      </div>
-      <q-img
+      <div class="text-subtitle1">{{ currentTime }}</div>
+
+      <!-- <q-img
         src="https://www3.nhk.or.jp/nhkworld/en/news/backstories/2331/images/geM9EJcCyAImlHFIjsH5cmlkkOq8cFDeAWl77CWu.jpeg"
         alt="이미지"
         class="header-image absolute-top"
-      />
+      /> -->
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      :width="200"
-      :breakpoint="400"
-    >
-      <q-scroll-area
-        style="
-          height: calc(100% - 192px);
-          margin-top: 192px;
-          border-right: 1px solid #ddd;
-        "
-      >
-        <q-list padding>
-          <q-item to="/" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="list" />
-            </q-item-section>
-            <q-item-section> Todo </q-item-section>
-          </q-item>
-          <q-item to="/help" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="help" />
-            </q-item-section>
-            <q-item-section> Help </q-item-section>
-          </q-item>
-        </q-list>
-      </q-scroll-area>
-
-      <q-img
-        class="absolute-top"
-        src="https://www3.nhk.or.jp/nhkworld/en/news/backstories/2331/images/geM9EJcCyAImlHFIjsH5cmlkkOq8cFDeAWl77CWu.jpeg"
-        style="height: 192px"
-      >
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img
-              src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80"
-            />
-          </q-avatar>
-          <div class="text-weight-bold">Jungwoo Son</div>
-          <div>@sonjungwoo9</div>
-        </div>
-      </q-img>
-    </q-drawer>
-
     <q-page-container>
       <keep-alive></keep-alive>
       <router-view />
@@ -84,7 +51,6 @@ export default defineComponent({
   components: {},
 
   setup() {
-    const leftDrawerOpen = ref(false);
     const currentTime = computed(() => {
       const timeStamp = Date.now();
       const options = {
@@ -101,11 +67,6 @@ export default defineComponent({
 
     return {
       currentTime,
-      // essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
     };
   },
 });
@@ -117,8 +78,5 @@ export default defineComponent({
   z-index: -1;
   opacity: 0.4;
   filter: grayscale(100%);
-}
-.q-img__image {
-  opacity: 0.7;
 }
 </style>
