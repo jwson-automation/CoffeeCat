@@ -45,7 +45,18 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
       vueRouterMode: "hash", // available values: 'hash', 'history'
-
+      htmlVariables: {
+        headTags: {
+          title: "Coffee Cat (Saffy 멘토링 신청)",
+          meta: [
+            { property: "og:title", content: "Coffee Cat (Saffy 멘토링 신청)" },
+            {
+              property: "og:image",
+              content: "../assets/logo.png",
+            },
+          ],
+        },
+      },
       // transpile: false,
       // publicPath: '/',
 
