@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header>
-      <q-toolbar class="q-pt-lg q-pb-lg q-px-md">
+    <q-header class="q-pt-lg q-pb-lg q-px-md" elevated>
+      <q-toolbar class="q-pt-lg q-pb-lg q-px-md" elevated>
         <q-space />
         <q-img src="../assets/logo.png" alt="Logo" width="300px" fit="cover" />
         <q-space />
@@ -15,7 +15,7 @@
         />
         <q-space />
         <q-btn
-          to="/"
+          to="/form"
           label="Form"
           flat
           round
@@ -24,19 +24,19 @@
         />
 
         <q-space />
-        <q-btn to="/help" label="Review" flat round dense class="text-center" />
+        <q-btn
+          to="/review"
+          label="Review"
+          flat
+          round
+          dense
+          class="text-center"
+        />
         <q-space />
       </q-toolbar>
-      <div class="text-subtitle1">{{ currentTime }}</div>
-
-      <!-- <q-img
-        src="https://www3.nhk.or.jp/nhkworld/en/news/backstories/2331/images/geM9EJcCyAImlHFIjsH5cmlkkOq8cFDeAWl77CWu.jpeg"
-        alt="이미지"
-        class="header-image absolute-top"
-      /> -->
+      <div class="text-right crtTime">{{ currentTime }}</div>
     </q-header>
     <q-page-container>
-      <keep-alive></keep-alive>
       <router-view />
     </q-page-container>
   </q-layout>
@@ -73,10 +73,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.header-image {
-  height: 100%;
-  z-index: -1;
-  opacity: 0.4;
-  filter: grayscale(100%);
+.q-header {
+  background-color: white;
+  margin: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0.15, 0.15, 0.15);
+}
+.crtTime {
+  color: black;
+  font-family: "Gamja Flower", "sans-serif";
+}
+.q-btn {
+  color: black;
+  font-family: "Exo 2", "sans-serif";
 }
 </style>

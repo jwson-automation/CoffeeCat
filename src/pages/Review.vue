@@ -1,15 +1,15 @@
 <template>
   <q-page class="bg-grey-3 column">
-    <div class="row q-pa-sm bg-primary">
+    <div class="row q-pa-sm bg-primary bg-white">
       <q-input
         v-model="newTask"
         @keyup.enter="addTask"
         class="col"
         square
         filled
-        bg-color="white"
-        placeholder="일정 추가"
+        placeholder="감상문 추가"
         dense
+        style="background-color: white; margin-top: 20px"
       >
         <template v-slot:append>
           <q-btn @click="addTask" round dense flat icon="add" />
@@ -92,7 +92,9 @@ export default defineComponent({
       });
       newTask.value = "";
     };
-    const tasks = reactive([{ title: "밥먹기", done: true }]);
+    const tasks = reactive([
+      { title: "감상문 기능은 추가중입니다.", done: false },
+    ]);
 
     const deleteTask = (index) => {
       tasks.splice(index, 1);
@@ -130,5 +132,8 @@ export default defineComponent({
 }
 .no-tasks {
   opacity: 0.5;
+}
+.bg-primary {
+  background-color: white;
 }
 </style>
