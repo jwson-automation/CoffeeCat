@@ -1,62 +1,100 @@
 <template>
-  <q-page class="q-pt-lg q-pb-lg q-px-md text-center flex-center">
+  <q-page class="q-pt-lg q-pb-lg q-px-md flex-center">
     <q-space />
-    <h5 class="q-mt-none" style="background-color: aquamarine">
-      Coffee Cat이 뭔가요?
-    </h5>
-    <div style="background-color: ghostwhite">
-      <p>안녕하세요!</p>
-      <p>
-        Coffee Cat은 8명의 신입 개발자, 싸피 교육생이 진행 중인 멘토링 프로그램
-        입니다.
-      </p>
-      <p>
-        <a href="https://forms.gle/7pXhQeigTGfWFsjQ7" style="font-weight: bold"
-          >FORM</a
-        >
-        버튼을 누르시고, 이야기 하고 싶은 내용, 상담 받고 싶은 내용을 적어서
-        보내주시면,
-      </p>
-      <p>
-        총 6명의 멘토 중에 가장 비슷한 상황의 경험이 있는 멘토님이 연락을
-        드립니다.
-      </p>
-    </div>
-    <h5 class="q-mt-none" style="background-color: aquamarine">
-      어떤방식으로 진행되나요?
-    </h5>
-    <div style="background-color: ghostwhite">
-      <p>진행 방식은 모두 멘토님들의 역량에 맡기고 있습니다.</p>
-      <p>
-        통화를 통해 이야기 하는 경우도 있고, 메세지로 설명하거나 첨삭을 직접
-        달아주시는 분도 계십니다.
-      </p>
-      <p>원하는 방향이 있다면 적극적으로 폼에 남겨주세요!</p>
-    </div>
-    <h5 class="q-mt-none" style="background-color: aquamarine">
-      NEXT SSAFY? 이 활동의 이름이 뭔가요?
-    </h5>
-    <div style="background-color: ghostwhite">
-      "NEXT SSAFY"는 SSAFY 도전자 또는 수료생이 함께 성장해가며 만들어가는
-      커뮤니티입니다.
-      <p></p>
-      "NEXT SSAFY"의 주요 특징은 다음과 같습니다.
-      <pre></pre>
-      - QnA 답변 : 공식적으로 물어보기 힘들거나, 주관적으로 판단해야 할 질문들의
-      QnA를 진행하고 결과를 저장해서 공유합니다.
-      <p></p>
-      - 모의 면접 & 스터디 : 이전 기수들의 면접 경험을 바탕으로 비슷한 상황을
-      겪을 수 있도록 모의 면접과 스터디를 주선합니다.
-      <p></p>
-      - 엔지니어로써 성장: 단순히 SSAFY의 합격 불합격을 목표로 하는 것이 아닌
-      다각도로 지금의 성장이 이후 엔지니어로써 나아갈 발판이 될 수 있도록 방향을
-      잡아줍니다.
-      <p></p>
-      - 열정있는 동료들과 친해질 기회 : SSAFY를 수료하거나, 도전한 것으로
-      만족하지 못하고 타인과 함께 정보를 공유하고 함께 성장하고 싶어하는
-      개발자들과 친해져, 지속 가능한 성장을 하며 서로에게 자극제가 되는 동료들이
-      됩시다!
-    </div>
+    <q-card class="q-mb-md">
+      <q-card-section style="display: flex; align-items: left">
+        <img
+          src="../assets/coffee.png"
+          style="width: 15%; margin-right: 20px"
+        />
+        <div class="q-gutter-md q-items-left">
+          <div>
+            <p
+              class="text-h5 font-weight-bold q-mb-xs"
+              style="background-color: wheat"
+            >
+              Coffee Cat이 뭔가요?
+            </p>
+
+            <p class="text-body-1 q-mb-md">
+              Coffee Cat은 8명의 신입 개발자, 싸피 교육생이 진행 중인 멘토링
+              프로그램입니다.
+            </p>
+            <a
+              style="background-color: black; color: white"
+              href="https://forms.gle/7pXhQeigTGfWFsjQ7"
+              >FORM</a
+            >
+            <span class="text-body-1">
+              버튼을 누르시면 멘토링 신청화면으로 전환됩니다.
+            </span>
+            <span class="text-body-1">
+              총 9명의 멘토 중에 가장 비슷한 상황의 경험이 있는 멘토님이 연락을
+              드릴 예정입니다.
+            </span>
+            <span style="background-color: yellow">
+              멘토링이 성공적이었다면, 멘토님에게 큰 사례는 필요 없으니 작은
+              커피 한잔씩 선물 해주세요!
+            </span>
+          </div>
+        </div>
+      </q-card-section>
+    </q-card>
+    <q-card class="q-mb-md">
+      <q-card-section style="display: flex; align-items: center">
+        <img
+          src="../assets/friends.png"
+          style="width: 15%; margin-right: 20px"
+        />
+        <div class="q-gutter-md q-items-center">
+          <div>
+            <p
+              class="text-h5 font-weight-bold q-mb-xs"
+              style="background-color: wheat"
+            >
+              어떤 이야기를 들을 수 있나요?
+            </p>
+
+            <p class="text-body-1 q-mb-md">
+              이력서 첨삭, 자소서 분석, 스토리텔링, 면접 준비, 시험 후기, 등
+              여러가지 정보를 들을 수 있습니다.
+            </p>
+
+            <span class="text-body-1">
+              또한, 엔지니어로써 최근 현업의 이야기나 방향성, 취업 준비 전략에
+              대한 이야기도 가능합니다. 하지만, 너무 과한 질문 세례는 멘토님이
+              힘들어하니 꼭 어떤 테마로 대화할 것인지 미리 준비해주세요!
+            </span>
+          </div>
+        </div>
+      </q-card-section>
+    </q-card>
+    <q-card class="q-mb-md">
+      <q-card-section style="display: flex; align-items: center">
+        <img src="../assets/heart.png" style="width: 15%; margin-right: 20px" />
+        <div class="q-gutter-md q-items-center">
+          <div>
+            <p
+              class="text-h5 font-weight-bold q-mb-xs"
+              style="background-color: wheat"
+            >
+              이런걸 왜 하는 건가요?
+            </p>
+
+            <p class="text-body-1 q-mb-md">
+              단순히 상담해주고 커피 한잔 선물 받고 끝이 아닌, 엔지니어로써
+              여러분과 함께 성장하는 동료가 되고 싶습니다.
+            </p>
+
+            <span class="text-body-1">
+              취업도, 이직도 정보가 가장 중요한 우리 엔지니어! 오늘 도움 받은
+              내용을 꼭 훌륭한 엔지니어가 되어서 함께 일하고 성장함으로써
+              돌려주세요!
+            </span>
+          </div>
+        </div>
+      </q-card-section>
+    </q-card>
   </q-page>
 </template>
 
@@ -70,6 +108,6 @@ export default defineComponent({
 <style>
 .q-page {
   font-family: "Gamja Flower", "sans-serif";
-  font-size: 20px;
+  font-size: medium;
 }
 </style>

@@ -22,11 +22,15 @@
         :key="task.title"
         class="q-pa-md"
       >
-        <q-card-section class="q-pa-md">
-          <q-item-section avatar> 익명의 오리너구리 </q-item-section>
+        <q-card-section class="q-pa-md" style="border-radius: 20px">
+          <q-item-section style="background-color: wheat" avatar>
+            {{ task.name }}
+          </q-item-section>
           <q-item-section>
             <q-item-label class="toDoTitle">{{ task.title }}</q-item-label>
-            <q-item-label class="toDoTitle">{{ task.date }}</q-item-label>
+            <q-item-label class="date" style="opacity: 50%">{{
+              task.date
+            }}</q-item-label>
           </q-item-section>
 
           <q-item-section v-if="task.done" side>
@@ -82,8 +86,9 @@ import {
   getDocs,
   query,
   deleteDoc,
+  orderBy,
 } from "firebase/firestore";
-import { randomNameBox } from "boot/firebase";
+import { randomNameBox } from "boot/nameBuilder";
 
 export default defineComponent({
   name: "IndexPage",
@@ -99,16 +104,11 @@ export default defineComponent({
 
     const backupRef = collection(db, "backup");
 
-    let ConnectedSize = -1;
+    let ConnectedSize = 0;
 
-    getDocs(ReviewsRef).then((querySnapshot) => {
-      console.log(querySnapshot.size + "size");
-      ConnectedSize = querySnapshot.size;
-    });
-
-    const addTask = () => {
-      getDocs(ReviewsRef).then((querySnapshot) => {
-        console.log(querySnapshot.size + "size");
+    const addTask = async () => {
+      getDocs(backupRef).then((querySnapshot) => {
+        console.log("addTask : " + querySnapshot.size);
         ConnectedSize = querySnapshot.size;
       });
       const now = new Date();
@@ -145,21 +145,28 @@ export default defineComponent({
     };
 
     const loadTasks = async () => {
-      const q = query(collection(db, "tasks"));
+      const q = query(collection(db, "tasks"), orderBy("id", "asc"));
       const querySnapshot = await getDocs(q);
-      console.log(querySnapshot);
+      console.log("loadTask:" + querySnapshot.size);
       querySnapshot.forEach((doc) => {
         tasks.push(doc.data());
+      });
+      getDocs(backupRef).then((querySnapshot) => {
+        console.log("addTask : " + querySnapshot.size);
+        ConnectedSize = querySnapshot.size;
       });
     };
 
     const deleteTask = async (index) => {
-      console.log(tasks.length - 1);
-      tasks.splice(tasks.length - 1, 1);
+      console.log("deleteTask : 시작");
+      console.log("index값 : " + index);
+      console.log(tasks);
+      const data = tasks[tasks.length - index - 1];
+      await deleteDoc(doc(db, "tasks", data.id + ""));
+      tasks.pop(index);
       $q.notify("Deleted");
-      console.log("check");
-      console.log(tasks.length - index + "삭제된 번호입니다.");
-      await deleteDoc(doc(db, "tasks", tasks.length - index - 1 + ""));
+      console.log("삭제된 id : " + data.id);
+      console.log("삭제된 title : " + data.title);
     };
 
     const showConfirmDialog = (index) => {
@@ -200,7 +207,8 @@ export default defineComponent({
 .bg-primary {
   background-color: white;
 }
-.q-item-section {
+.toDoTitle {
   font-family: "Gamja Flower", "sans-serif";
+  font-size: medium;
 }
 </style>
