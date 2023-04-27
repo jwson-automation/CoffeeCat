@@ -1,6 +1,6 @@
 # Coffe Cat
 
-www.coffeecat.online
+http://coffeecat.online
 
 ## Stack
 
