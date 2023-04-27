@@ -2,7 +2,7 @@
   <q-page class="q-pt-lg q-pb-lg q-px-md flex-center">
     <q-space />
     <q-card class="q-mb-md">
-      <q-card-section style="display: flex; align-items: left">
+      <q-card-section style="display: flex; align-items: center">
         <img
           src="../assets/coffee.png"
           style="width: 15%; margin-right: 20px"
